@@ -1542,7 +1542,7 @@ exit 0' >$RCLOCAL
 				sleep 3
 				fun_socks
 			fi
-        elif [[ "$resposta" = '2' ]]; then
+        elif [[ "$resposta" = '1' ]]; then
 			if ps x | grep -w wsproxy.py | grep -v grep 1>/dev/null 2>/dev/null; then
 				clear
 				echo -e "\E[41;1;37m             WEBSOCKET              \E[0m"
@@ -1563,7 +1563,7 @@ exit 0' >$RCLOCAL
 				echo ""
 				echo -e "\033[1;32mWEBSOCKET DESATIVADO COM SUCESSO!\033[1;33m"
 				sleep 3
-				fun_socks
+				web_socks
 			else
 				clear
 				echo -e "\E[44;1;37m             WEBSOCKET              \E[0m"
@@ -1789,7 +1789,7 @@ exit 0' >$RCLOCAL
 				sleep 2
 				fun_socks
 			fi
-        		elif [[ "$resposta" = '6' ]]; then
+        		elif [[ "$resposta" = '2' ]]; then
 			if ps x | grep -w wsproxy.py | grep -v grep 1>/dev/null 2>/dev/null; then
 				clear
 				msgsocks=$(cat /etc/SSHPlus/wsproxy.py | grep -E "MSG =" | awk -F = '{print $2}' | cut -d "'" -f 2)
@@ -1802,7 +1802,7 @@ exit 0' >$RCLOCAL
 				[[ -z "$msgg" ]] && {
 					echo -e "\n\033[1;31mStatus invalido!"
 					sleep 2
-					fun_conexao
+					web_socks
 				}
 				[[ ${msgg} != ?(+|-)+([a-zA-Z0-9-. ]) ]] && {
 					echo -e "\n\033[1;31m[\033[1;33m!\033[1;31m]\033[1;33m EVITE CARACTERES ESPECIAIS\033[0m"
