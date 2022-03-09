@@ -489,7 +489,7 @@ SCOLOR='\033[0m'
 	                conexao
 	            }
 	            v2rayinst
-            fi
+       fi
         }
     	fun_chisel() {
 		clear
@@ -1731,10 +1731,11 @@ exit 0' >$RCLOCAL
 				sleep 2
 				fun_socks
 		  fi
-        }
-    	fun_chisel() {
-		clear			
-        echo -e "\E[44;1;37m            GERENCIAR WEBSOCKET             \E[0m"
+	}
+
+	web_socks() {
+		clear
+		echo -e "\E[44;1;37m            GERENCIAR WEBSOCKET             \E[0m"
 		echo ""
 		[[ $(netstat -nplt | grep -wc 'python') != '0' ]] && {
 			sks='\033[1;32mON'
