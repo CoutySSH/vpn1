@@ -1736,7 +1736,7 @@ exit 0' >$RCLOCAL
 			fi
 echo -e "\E[44;1;37m            GERENCIAR WEBSOCKET             \E[0m"
 		echo ""
-		[[ $(netstat -nplt | grep -wc 'python') != '0' ]] && {
+		[[ $(netstat -nplt | grep -wc 'python1') != '0' ]] && {
 			sks='\033[1;32mON'
 			echo -e "\033[1;33mPORTAS\033[1;37m: \033[1;32m$(netstat -nplt | grep 'python' | awk {'print $4'} | cut -d: -f2 | xargs)"
 		} || {
@@ -1771,7 +1771,7 @@ echo -e "\E[44;1;37m            GERENCIAR WEBSOCKET             \E[0m"
 				echo ""
 				echo -e "\033[1;32mWEBSOCKET DESATIVADO COM SUCESSO!\033[1;33m"
 				sleep 3
-				fun_socks
+				web_socks
 			else
 				clear
 				echo -e "\E[44;1;37m             WEBSOCKET              \E[0m"
@@ -1823,7 +1823,7 @@ echo -e "\E[44;1;37m            GERENCIAR WEBSOCKET             \E[0m"
 				[[ ${msgg} != ?(+|-)+([a-zA-Z0-9-. ]) ]] && {
 					echo -e "\n\033[1;31m[\033[1;33m!\033[1;31m]\033[1;33m EVITE CARACTERES ESPECIAIS\033[0m"
 					sleep 2
-					fun_socks
+					web_socks
 				}
 				echo -e "\n\033[1;31m[\033[1;36m01\033[1;31m]\033[1;33m AZUL"
 				echo -e "\033[1;31m[\033[1;36m02\033[1;31m]\033[1;33m VERDE"
@@ -1893,12 +1893,12 @@ echo -e "\E[44;1;37m            GERENCIAR WEBSOCKET             \E[0m"
 				echo ""
 				echo -e "\033[1;32mSTATUS ALTERADO COM SUCESSO!"
 				sleep 2
-				fun_socks
+				web_socks
 			else
 				clear
 				echo -e "\033[1;31mFUNCAO INDISPONIVEL\n\n\033[1;33mATIVE O WEBSOCKET PRIMEIRO !\033[1;33m"
 				sleep 2
-				fun_socks
+				web_socks
 			fi
 		elif [[ "$resposta" = '0' ]]; then
 			echo ""
@@ -1909,7 +1909,7 @@ echo -e "\E[44;1;37m            GERENCIAR WEBSOCKET             \E[0m"
 			echo ""
 			echo -e "\033[1;31mOpcao invalida !\033[0m"
 			sleep 1
-			fun_socks
+			web_socks
 		fi
 
 	}
@@ -2067,11 +2067,11 @@ echo -e "\E[44;1;37m            GERENCIAR WEBSOCKET             \E[0m"
 			} || {
 				sts4="\033[1;31m○ "
 			}
-					[[ "$(netstat -tlpn | grep 'python' | wc -l)" != '0' ]] && {
-				echo -e "\033[1;32mSERVICO: \033[1;33mWEBSOCKET \033[1;32mPORTA: \033[1;37m$(netstat -nplt | grep 'python' | awk {'print $4'} | cut -d: -f2 | xargs)"
-				sts4="\033[1;32m◉ "
+					[[ "$(netstat -tlpn | grep 'python1' | wc -l)" != '0' ]] && {
+				echo -e "\033[1;32mSERVICO: \033[1;33mWEBSOCKET \033[1;32mPORTA: \033[1;37m$(netstat -nplt | grep 'python1' | awk {'print $4'} | cut -d: -f2 | xargs)"
+				sts9="\033[1;32m◉ "
 			} || {
-				sts4="\033[1;31m○ "
+				sts9="\033[1;31m○ "
 			}
 			[[ -e "/etc/stunnel/stunnel.conf" ]] && {
 				echo -e "\033[1;32mSERVICO: \033[1;33mSSL TUNNEL \033[1;32mPORTA: \033[1;37m$(netstat -nplt | grep 'stunnel' | awk {'print $4'} | cut -d: -f2 | xargs)"
@@ -2107,7 +2107,7 @@ echo -e "\E[44;1;37m            GERENCIAR WEBSOCKET             \E[0m"
 [\033[1;36m07\033[1;31m] \033[1;37m• \033[1;33mSSL TUNNEL $sts3\033[1;31m
 [\033[1;36m08\033[1;31m] \033[1;37m• \033[1;33mSSLH MULTIPLEX $sts7\033[1;31m
 [\033[1;36m09\033[1;31m] \033[1;37m• \033[1;33mCHISEL $sts8\033[1;31m
-[\033[1;36m010\033[1;31m] \033[1;37m• \033[1;33mV2RAY $xv2ray\033[1;31m
+[\033[1;36m10\033[1;31m] \033[1;37m• \033[1;33mV2RAY $xv2ray\033[1;31m
 [\033[1;36m11\033[1;31m] \033[1;37m• \033[1;33mVOLTAR \033[1;32m<\033[1;33m<\033[1;31m< \033[1;31m
 [\033[1;36m00\033[1;31m] \033[1;37m• \033[1;33mSAIR \033[1;32m<\033[1;33m<\033[1;31m< \033[0m"
 			echo ""
