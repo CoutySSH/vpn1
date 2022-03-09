@@ -1984,4 +1984,3 @@ exit 0' >$RCLOCAL
 		done
 	}
 	fun_conexao
-}
