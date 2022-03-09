@@ -1731,7 +1731,6 @@ exit 0' >$RCLOCAL
 				sleep 2
 				fun_socks
 		  fi
-	}
 
 	web_socks() {
 		clear
