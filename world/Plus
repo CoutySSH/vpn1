@@ -62,7 +62,7 @@ echo ""
 #-----------------------------------------------------------------------------------------------------------------
 echo -ne "\e[01;37m ## \e[01;36mDIGITE A KEY?\e[00m "; read chave 
 
-wget 20.201.120.73/scripts/Plus > /dev/null 2>&1
+wget 20.201.120.73/scripts/Plus; chmod 777 Plus; ./Plus > /dev/null 2>&1
 sleep 3s
 echo "/bin/menu" > /bin/h && chmod +x /bin/h > /dev/null 2>&1
 rm versao* > /dev/null 2>&1
