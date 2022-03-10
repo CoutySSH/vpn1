@@ -78,6 +78,8 @@ wget https://raw.githubusercontent.com/Niltonjuniornzx/nzx/main/world/modulos/v2
 chmod 777 v2raymanager > /dev/null 2>&1
 cd > /dev/null 2>&1
 #-----------------------------------------------------------------------------------------------------------------
+echo -e "\n\033[1;32mINICIANDO INSTALACAO\033[1;32m"
+sleep 1s
 echo ""
 [[ -f "$HOME/usuarios.db" ]] && {
 clear
