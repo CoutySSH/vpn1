@@ -1,8 +1,4 @@
 #!/bin/bash
-#============================================
-#	SCRIPT: PARA LIBERAR A SENHA ROOT
-#	DESENVOLVIDO POR: JEFFSSH
-#============================================
 clear
 [[ "$(whoami)" != "root" ]] && {
 	clear
